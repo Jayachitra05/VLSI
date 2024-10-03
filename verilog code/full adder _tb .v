@@ -1,18 +1,16 @@
-module tb_full();
-reg a,b,cin;
-wire s,c;
-full dut(a,b,cin,s,c);
-initial begin
-   a=1'b0;b=1'b0;cin=1'b0;
-#5 a=1'b0;b=1'b0;cin=1'b1;
-#5 a=1'b0;b=1'b1;cin=1'b0;
-#5 a=1'b1;b=1'b0;cin=1'b0;
-#5 a=1'b1;b=1'b0;cin=1'b1;
-#5 a=1'b1;b=1'b1;cin=1'b0;
-#5 a=1'b1;b=1'b1;cin=1'b1;
-#100 $finish;
-end
-initial begin
-      $monitor ("%t a=%b,b=%b,cin=%b,s=%b,c=%b",$time,a,b,cin,s,c);
-end
+module tb_top;
+  reg a, b, c;
+  wire s, c_out;
+  full_adder fa(a, b, c, s, c_out); 
+  initial begin
+    $monitor("At time %0t: a=%b b=%b, cin=%b, sum=%b, carry=%b",$time, a,b,c,s,c_out);
+    a = 0; b = 0; c = 0; #1;
+    a = 0; b = 0; c = 1; #1;
+    a = 0; b = 1; c = 0; #1;
+    a = 0; b = 1; c = 1; #1;
+    a = 1; b = 0; c = 0; #1;
+    a = 1; b = 0; c = 1; #1;
+    a = 1; b = 1; c = 0; #1;
+    a = 1; b = 1; c = 1;
+  end
 endmodule
