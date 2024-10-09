@@ -9,3 +9,5 @@ module while_example;
         $display("Final value of acc = %b", acc);
     end
 endmodule
+/* output
+1000*/
