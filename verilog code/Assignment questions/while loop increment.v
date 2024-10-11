@@ -5,7 +5,7 @@ module while_example;
         while (acc < 4'b1000) begin 
             acc = acc + 1;  
         end
-        $display("Final value of acc = %b", acc);
+        $display("value  = %b", acc);
     end
 endmodule
 /* output
