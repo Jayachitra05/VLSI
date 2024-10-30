@@ -1,4 +1,4 @@
-// Code your design here
+
 module seq_det_1010(
   input clk, rst, x,
   output reg z
