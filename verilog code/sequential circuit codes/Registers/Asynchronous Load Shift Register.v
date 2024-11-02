@@ -1,0 +1,16 @@
+module async_load_shift_register (
+    input clk,
+    input rst,
+    input load,
+    input [3:0] parallel_in,
+    output reg [3:0] q
+);
+    always @(posedge clk or posedge rst) begin
+        if (rst) 
+            q <= 0;
+        else if (load) 
+            q <= parallel_in; // Asynchronous load
+        else 
+            q <= {q[2:0], 1'b0}; // Shift left
+    end
+endmodule
