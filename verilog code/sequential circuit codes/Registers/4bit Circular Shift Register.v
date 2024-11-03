@@ -10,4 +10,8 @@ module circular_shift_register (
         else 
             q <= {q[2:0], q[3]}; // Circular shift left
     end
+    initial begin
+    $dumpfile("waves.vcd");
+    $dumpvars;
+    end
 endmodule
