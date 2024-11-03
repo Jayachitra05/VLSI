@@ -9,8 +9,8 @@ module async_load_shift_register (
         if (rst) 
             q <= 0;
         else if (load) 
-            q <= parallel_in; // Asynchronous load
+            q <= parallel_in; 
         else 
-            q <= {q[2:0], 1'b0}; // Shift left
+            q <= {q[2:0], 1'b0}; 
     end
 endmodule
