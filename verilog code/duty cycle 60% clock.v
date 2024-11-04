@@ -6,7 +6,6 @@ module duty_cycle(input in_clk, rst, output reg out_clk);
       counter <= 0;
       out_clk <= 0;
     end
-    
     else begin
       counter <= counter+1;
       if(counter<6)
