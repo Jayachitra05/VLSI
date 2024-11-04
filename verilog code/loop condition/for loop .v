@@ -1,11 +1,10 @@
 module for_example;
-  int cnt;
+  integer cnt;
   initial begin
-    for (;;) begin
+    for(cnt = 0; cnt < 10; cnt = cnt + 1)
+      begin
       $display("cnt = %0d", cnt);
-      if(cnt == 10) break;
-      cnt++;
-    end
+      end 
   end
 endmodule
 /* output
@@ -18,5 +17,4 @@ endmodule
 # KERNEL: cnt = 6
 # KERNEL: cnt = 7
 # KERNEL: cnt = 8
-# KERNEL: cnt = 9
-# KERNEL: cnt = 10*/
+# KERNEL: cnt = 9*/
