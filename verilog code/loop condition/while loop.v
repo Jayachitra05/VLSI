@@ -1,9 +1,9 @@
 module while_example;  
-  int count;
+  integer count;
   initial begin
     while(count<10) begin 
       $display("Value of count = %0d", count);
-      count++;
+      count=count+1;
     end
   end
 endmodule
