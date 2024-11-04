@@ -3,7 +3,7 @@ module forever_example;
   initial begin
     forever begin 
       $display("Value of count = %0d", count);
-      count++;
+      count=count+1;
       #5;
     end
   end
