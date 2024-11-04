@@ -1,4 +1,4 @@
-module more_than_one_1s(input clk,rst,x, output z); //mealy machine
+module more_than_one_1s(input clk,rst,x, output z); 
   parameter s0 = 2'b00;
   parameter s1 = 2'b01;
   parameter s2 = 2'b10;
