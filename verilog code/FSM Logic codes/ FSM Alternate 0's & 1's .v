@@ -29,11 +29,11 @@ module alternate_0s_1s(input clk, rst, x, output reg z);
       
       s1 : begin
         if(x==0) begin
-          next_state = s2;
+          next_state = s1;
           z = 0;
         end
         else begin
-          next_state = s1;
+          next_state = s2;
           z = 0;
         end
       end
