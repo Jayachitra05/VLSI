@@ -1,58 +1,52 @@
-module fsm_even_odd (
+module even_odd_fsm (
     input clk,
     input reset,
-    input a,             
-  output reg [3:0] y  
+    input in,               
+    output reg even_0s,     
+    output reg even_1s      
 );
-
-    parameter s0 = 4'b1000;
-    parameter s1 = 4'b0100; 
-    parameter s2 = 4'b0010;
-    parameter s3 = 4'b0001;
-    reg [3:0] state, next_state;
+    parameter S00 = 2'b00; 
+    parameter S01 = 2'b01; 
+    parameter S10 = 2'b10;
+    parameter S11 = 2'b11; 
+    reg [1:0] state, next_state;
     always @(posedge clk or posedge reset) begin
         if (reset)
-            state <= s0;  
+            state <= S00;    
         else
             state <= next_state;
     end
     always @(*) begin
         case (state)
-            s0: begin
-              if (a == 0)
-                    next_state = s2;  
-                else
-                    next_state = s1;   
-            end
-            s1: begin
-              if (a == 0)
-                    next_state = s3; 
-                else
-                    next_state = s0;  
-            end
-            s2: begin
-              if (a == 0)
-                    next_state = s0;  
-                else
-                    next_state = s3;  
-            end
-            s3: begin
-              if (a == 0)
-                    next_state = s1;
-                else
-                    next_state = s2;  
-            end
-            default: next_state = s0; 
+            S00: next_state = (in == 0) ? S10 : S01;
+            S01: next_state = (in == 0) ? S11 : S00;
+            S10: next_state = (in == 0) ? S00 : S11;
+            S11: next_state = (in == 0) ? S01 : S10;
+            default: next_state = S00;
         endcase
     end
     always @(*) begin
         case (state)
-            s0: y = 4'b1000;
-            s1: y = 4'b0100;
-            s2: y = 4'b0010;
-            s3: y = 4'b0001;
-            default: y = 4'b0000;
+            S00: begin
+                even_0s = 1;
+                even_1s = 1;
+            end
+            S01: begin
+                even_0s = 1;
+                even_1s = 0;
+            end
+            S10: begin
+                even_0s = 0;
+                even_1s = 1;
+            end
+            S11: begin
+                even_0s = 0;
+                even_1s = 0;
+            end
+            default: begin
+                even_0s = 1;
+                even_1s = 1;
+            end
         endcase
     end
-
 endmodule
