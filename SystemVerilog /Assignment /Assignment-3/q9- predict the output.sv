@@ -15,3 +15,7 @@ b1_h.get();
 b1_h.get();
 end
 endmodule
+/*output
+ KERNEL:            1
+# KERNEL:           1
+# KERNEL:           1*/
