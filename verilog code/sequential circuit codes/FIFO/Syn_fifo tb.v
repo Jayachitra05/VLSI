@@ -8,7 +8,7 @@ module sfifo_tb;
   wire [7:0]data_out;
   wire full,empty;
   
-  fifo_buffer dut(clk,reset,write_e,read_e,data_in,data_out,full,empty);
+  fifo_buffer dut(clk,reset,write_e,read_e,data_in,data_out,full,empty,write_ptr,read_ptr);
   
   initial begin
     clk=0;
