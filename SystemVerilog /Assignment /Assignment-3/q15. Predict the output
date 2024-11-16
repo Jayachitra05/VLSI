@@ -1,0 +1,26 @@
+//15. Predict the output for the following exercises
+
+class base;
+	int i;
+	static function void get();
+		int a;
+		a++;
+		i++;
+		$display(a);
+		$display(i);
+	endfunction
+endclass
+
+base b1_h,b2_h;
+
+module test();
+	initial begin
+		b1_h.get();
+		b1_h.get();
+		b2_h.get();
+	end
+endmodule
+/*output
+ERROR VCP5238 "Cannot access non-static class member 'i' from static method without specifying class object." "testbench.sv" 10  10
+ERROR VCP5238 "Cannot access non-static class member 'i' from static method without specifying class object." "testbench.sv" 12  19*/
+
