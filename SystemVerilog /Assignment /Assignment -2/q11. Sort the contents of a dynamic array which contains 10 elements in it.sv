@@ -1,5 +1,6 @@
 /*11. Sort the contents of a dynamic array which contains 10 elements in it.module sort_dynamic_array();*/
-    int data[10];  
+module dyn_arr;    
+int data[10];  
     initial begin  
         data = '{34, 12, 56, 2, 89, 23, 15, 77, 43, 9};
         data.sort(); 
