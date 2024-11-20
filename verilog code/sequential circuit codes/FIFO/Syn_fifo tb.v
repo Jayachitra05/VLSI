@@ -3,7 +3,7 @@
 module sfifo_tb;
   reg clk,reset,write_e,read_e;
   reg [7:0]data_in;
-  reg [2:0]write_ptr,read_ptr;
+  reg [3:0]write_ptr,read_ptr;
   reg [7:0]memory[7:0];
   wire [7:0]data_out;
   wire full,empty;
