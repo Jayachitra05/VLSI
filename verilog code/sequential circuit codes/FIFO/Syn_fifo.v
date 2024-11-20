@@ -4,7 +4,7 @@ module fifo_buffer(
   input [7:0] data_in,
   output reg [7:0] data_out,
   output wire full,empty,
-  output reg [2:0] write_ptr, read_ptr
+  output reg [3:0] write_ptr, read_ptr
 );
 
   reg [7:0] memory[7:0];
