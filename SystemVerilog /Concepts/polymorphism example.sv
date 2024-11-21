@@ -69,12 +69,12 @@ module student_names;
     p_e = s_e;
     p_f = s_f;
     
-    s_a.name();
-    s_b.name();
-    s_c.name();
-    s_d.name();
-    s_e.name();
-    s_f.name();
+    p_a.name();
+    p_b.name();
+    p_c.name();
+    p_d.name();
+    p_e.name();
+    p_f.name();
   end
 endmodule
 /*output
