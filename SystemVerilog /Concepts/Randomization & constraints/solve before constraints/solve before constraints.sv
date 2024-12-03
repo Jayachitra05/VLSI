@@ -1,3 +1,4 @@
+/* without solve before constraint*/
 class packet;
   rand bit a;
   rand bit [3:0]b;
