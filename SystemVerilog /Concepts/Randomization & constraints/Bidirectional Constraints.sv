@@ -16,6 +16,8 @@ module bidirectional;
     end
   end
 endmodule
+
+
 /* output
 values of a=10,	b=8,	c=2
 values of a=15,	b=10,	c=5
