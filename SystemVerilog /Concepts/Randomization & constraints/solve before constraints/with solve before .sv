@@ -14,6 +14,7 @@ module inline_constr ;
     end
   end
 endmodule
+
 /* output 
    a=1,b=0
 	 a=0,b=8
